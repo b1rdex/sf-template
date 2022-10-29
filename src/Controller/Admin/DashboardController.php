@@ -19,14 +19,13 @@ class DashboardController extends AbstractDashboardController
     #[Route('/admin', name: 'admin')]
     public function index(): Response
     {
-        // todo: по умолчанию нужно будет редиректить на квартиры
         return $this->redirect($this->adminUrlGenerator->setController(UserCrudController::class)->generateUrl());
     }
 
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('Temarent');
+            ->setTitle('Template');
     }
 
     public function configureMenuItems(): iterable
