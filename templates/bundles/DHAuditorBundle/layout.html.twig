@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>auditor</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('bundles/dhauditor/app.css') }}">
+    {% endblock %}
+</head>
+<body>
+<div>
+    <nav class="bg-gray-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <a href="{{ path('admin') }}" class="navbar-brand mb-0 text-light" title="auditor" style="width: 200px; color: #fff">
+                            Back to dashboard
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="bg-white">
+        <div class="max-w-7xl mx-auto py-4 px-4 sm:px-6 lg:px-8">
+            {#            <h1 class="text-lg leading-6 font-semibold text-gray-900">#}
+            {% block dh_auditor_header %}{% endblock %}
+            {#            </h1>#}
+        </div>
+    </header>
+    <main>
+        <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+            {% block dh_auditor_content %}{% endblock %}
+        </div>
+    </main>
+</div>
+{% block javascripts %}{% endblock %}
+</body>
+</html>

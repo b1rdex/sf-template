@@ -1,0 +1,19 @@
+version: "3.4"
+
+# Production environment override
+services:
+  php:
+    restart: unless-stopped
+    environment:
+      APP_SECRET: 5a470f72410909bff2f7531a
+      MERCURE_JWT_SECRET: 835e4c1714b13dc209fbf96e
+
+  caddy:
+    restart: unless-stopped
+    environment:
+      MERCURE_PUBLISHER_JWT_KEY: 835e4c1714b13dc209fbf96e
+      MERCURE_SUBSCRIBER_JWT_KEY: 835e4c1714b13dc209fbf96e
+      SERVER_NAME: magnificentmongolia.com
+
+  database:
+    restart: unless-stopped
