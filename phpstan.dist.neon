@@ -10,8 +10,6 @@ parameters:
         console_application_loader: tests/console-application.php
     reportUnmatchedIgnoredErrors: false
     ignoreErrors:
-        - message: '#no value type specified#'
-          path: tests/
 
 includes:
     - vendor/phpstan/phpstan/conf/bleedingEdge.neon
