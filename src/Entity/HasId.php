@@ -6,9 +6,6 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Bridge\Doctrine\Types\UlidType;
 use Symfony\Component\Uid\Ulid;
 
-/**
- *
- */
 trait HasId
 {
     #[ORM\Id]
@@ -20,5 +17,10 @@ trait HasId
     public function getId(): Ulid
     {
         return $this->id;
+    }
+
+    public function getCreatedAt(): \DateTimeImmutable
+    {
+        return $this->id->getDateTime();
     }
 }

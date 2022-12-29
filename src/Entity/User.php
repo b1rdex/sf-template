@@ -13,7 +13,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 class User implements UserInterface, PasswordAuthenticatedUserInterface
 {
     use HasId;
-    use HasTimestamps;
+    use HasUpdatedAt;
 
     #[ORM\Column(length: 180, unique: true)]
     private string $username;
