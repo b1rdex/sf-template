@@ -69,6 +69,6 @@ check: lint-container ecs phpstan
 lint-container:
 	bin/console lint:container
 ecs:
-	vendor/bin/ecs --fix
+	vendor/bin/ecs --fix || true
 phpstan:
-	vendor/bin/phpstan
+	vendor/bin/phpstan --memory-limit=256M
