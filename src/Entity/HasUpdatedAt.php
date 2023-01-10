@@ -8,7 +8,7 @@ use Gedmo\Mapping\Annotation as Gedmo;
 trait HasUpdatedAt
 {
     #[Gedmo\Timestampable(on: 'update')]
-    #[ORM\Column(type: 'datetime_immutable')]
+    #[ORM\Column(type: \Doctrine\DBAL\Types\Types::DATETIME_IMMUTABLE)]
     private \DateTimeImmutable $updatedAt;
 
     public function getUpdatedAt(): \DateTimeImmutable

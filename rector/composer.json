@@ -1,0 +1,10 @@
+{
+    "require-dev": {
+        "rector/rector": "@stable"
+    },
+    "scripts": {
+        "rector": [
+            "@php vendor/bin/rector --clear-cache"
+        ]
+    }
+}

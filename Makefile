@@ -72,3 +72,9 @@ ecs:
 	vendor/bin/ecs --fix || true
 phpstan:
 	vendor/bin/phpstan --memory-limit=256M
+
+.PHONY: rector
+rector: do-rector check
+do-rector:
+	composer -d rector install
+	composer -d rector rector
